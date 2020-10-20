@@ -25,12 +25,16 @@ public class Carro {
         this.precoCusto = calcularCusto(carro);
     }
 
+    public static void setIndexCarro(int indexCarro) {
+        Carro.indexCarro = indexCarro;
+    }
+
     public float calcularCusto(Carro carro){
         float valor = 0;
         for (var x = 0; x < carro.listaItens.size(); x++){
             valor += carro.listaItens.get(x).getValorItem();
         }
-        return valor; // metodo para calcular o preco de custo do carro baseado nas pecas
+        return ((valor * 1.08f) * 1.10f); // metodo para calcular o preco de custo do carro baseado nas pecas
     }
 
     public static void adicionarItemLista(ItemDoCarro item){
